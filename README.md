@@ -1,5 +1,4 @@
-Boilerplate
+Activity Visualization
 ===========
 
-Boilerplate for COGS 121. This should provide a basic set up for node.js. 
-Make sure you run npm install before using
+The site for the 121 X 102C Project
