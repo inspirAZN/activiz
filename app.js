@@ -63,7 +63,9 @@ passport.deserializeUser(User.deserializeUser());
 /* END Passport Config General */
 
 // Mongoose Connect DB
-mongoose.connect(process.env.MONGOHQ_URL);
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL;
+mongoose.connect(mongoUri);
 
 /* Routes */
 
