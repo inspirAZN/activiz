@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Facebook and Twitter API</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css">
+      <!-- <link rel="stylesheet" type="text/css" href="../css/custom.css"> -->
+</head>
+
+<body>
+
+
+<div id="chart"></div>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/d3.js"></script>
+<script src="../js/rickshaw.js"></script>
+<script>
+
+    d3.csv('./csv/filtered.csv', function(d) {
+      data = d;
+      // console.log(data);
+
+      return {
+        time: data.Time, 
+        leftX: +data.WristLeftX,
+        leftY: +data.WristLeftY,
+        rightX: +data.WristRightX,
+        rightY: +data.WristRightY,
+      };
+    }, function(error, response) {
+        // full array of left/right coordinates
+        var leftData = [];
+        var rightData = [];
+
+        // the mapping of the response to just x and y
+        var leftMapping = {};
+        var rightMapping = {};
+
+        // loop and map
+        $.each( response, function(key, value){
+
+          leftMapping.x = value.leftX;
+          leftMapping.y = value.leftY;
+
+          rightMapping.x = value.rightX;
+          rightMapping.y = value.rightY;
+          
+          // add it to the array
+          leftData.push(leftMapping);
+          rightData.push(rightMapping);
+
+          // reset the blank object
+          leftMapping = {};
+          rightMapping = {};
+      });
+
+      // console.log(leftData);
+      // console.log(rightData);
+      // sort the array by x
+      leftData.sort(function(a,b) {
+        // compare
+        if( a.x < b.x ) {
+          return -1;
+        }
+        if( a.x > b.x ) {
+          return 1;
+        }
+        return 0;
+      });
+
+      rightData.sort(function(a,b) {
+        // compare
+        if( a.x < b.x ) {
+          return -1;
+        }
+        if( a.x > b.x ) {
+          return 1;
+        }
+        return 0;
+      });
+
+      // color
+      var palette = new Rickshaw.Color.Palette();
+
+      // the graph
+      var graph = new Rickshaw.Graph( {
+        element: document.querySelector("#chart"),
+        width: 875,
+        height: 500,
+        renderer: 'line',
+        series: [ {
+          name: "Wrist left",
+          data: leftData,
+          color: palette.color()
+        }, {
+          name: "Wrist Right",
+          data: rightData,
+          color: palette.color()
+        } ]
+        } );
+
+
+        // var y_axis = new Rickshaw.Graph.Axis.Y( {
+        //             graph: graph,
+        //             orientation: 'left',
+        //             tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        //             element: document.getElementById('y_axis'),
+        //           } );
+
+        graph.render();
+      });
+
+
+
+
+</script>
+
+</body>
+</html>

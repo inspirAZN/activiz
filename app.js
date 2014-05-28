@@ -9,6 +9,7 @@ var http = require('http');
 var path = require('path');
 
 // route includes
+var testD3 = require('./routes/testD3');
 
 
 var app = express();
@@ -38,6 +39,7 @@ if ('development' == app.get('env')) {
 
 // routes
 app.get('/', routes.index);
+app.get('/testviz', testD3.viz);
 
 
 
