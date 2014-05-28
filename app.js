@@ -56,18 +56,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-<<<<<<< HEAD
 // routes
 app.get('/', routes.index);
 app.get('/testviz', testD3.viz);
-=======
+
 /* Passport Config General */
 var User = require('./models/user');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 /* END Passport Config General */
->>>>>>> 6ada3185556392128ff43a6b2b8e1ec711a2f613
 
 // Mongoose Connect DB
 var mongoUri = process.env.MONGOLAB_URI ||
