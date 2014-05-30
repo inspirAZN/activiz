@@ -15,7 +15,7 @@ var indexRoute = require('./routes/index');
 var userRoute = require('./routes/user');
 // route includes
 var routes = require('./routes');
-var testD3 = require('./routes/testD3');
+var testD3 = require('./routes/testd3');
 
 
 /* END Routes variables for files */
@@ -70,9 +70,9 @@ passport.deserializeUser(User.deserializeUser());
 /* END Passport Config General */
 
 // Mongoose Connect DB
-// var mongoUri = process.env.MONGOLAB_URI ||
-//   process.env.MONGOHQ_URL;
-// mongoose.connect(mongoUri);
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL;
+mongoose.connect(mongoUri);
 
 /* Routes */
 
