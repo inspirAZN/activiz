@@ -13,15 +13,16 @@ var LocalStrategy = require('passport-local').Strategy;
 /* Routes variables for files*/
 var indexRoute = require('./routes/index');
 var userRoute = require('./routes/user');
-/* END Routes variables for files */
-
-//load environment variables
-// var dotenv = require('dotenv');
-// dotenv.load();
-
 // route includes
 var routes = require('./routes');
 var testD3 = require('./routes/testD3');
+
+
+/* END Routes variables for files */
+
+//load environment variables
+var dotenv = require('dotenv');
+dotenv.load();
 
 
 var app = express();
