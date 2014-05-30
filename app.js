@@ -59,7 +59,7 @@ if ('development' == app.get('env')) {
 }
 
 // routes
-app.get('/', routes.index);
+// app.get('/', routes.index);
 app.get('/testviz', testD3.viz);
 
 /* Passport Config General */
