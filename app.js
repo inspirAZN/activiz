@@ -6,7 +6,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -16,10 +16,11 @@ var userRoute = require('./routes/user');
 /* END Routes variables for files */
 
 //load environment variables
-var dotenv = require('dotenv');
-dotenv.load();
+// var dotenv = require('dotenv');
+// dotenv.load();
 
 // route includes
+var routes = require('./routes');
 var testD3 = require('./routes/testD3');
 
 
@@ -35,7 +36,7 @@ app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
 
-//app.use(express.favicon());
+app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -68,9 +69,9 @@ passport.deserializeUser(User.deserializeUser());
 /* END Passport Config General */
 
 // Mongoose Connect DB
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL;
-mongoose.connect(mongoUri);
+// var mongoUri = process.env.MONGOLAB_URI ||
+//   process.env.MONGOHQ_URL;
+// mongoose.connect(mongoUri);
 
 /* Routes */
 
