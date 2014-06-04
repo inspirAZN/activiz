@@ -31,7 +31,7 @@ function upload (){
               }
               //console.log(inputrad[1]);
               $("#csvimporthint").html(csvheader.map(function (d){
-                  return d+" ";
+                  return d+" </br>";
               }));
               $("#csvimporthinttitle").show();
               csvvalues.map(function (d){
@@ -49,8 +49,6 @@ function upload (){
 
       return false;
       });
-    $("#graphbtn").click(scatterPlot3d( d3.select('#divPlot')) );
-    
 }
 
 
