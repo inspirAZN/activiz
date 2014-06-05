@@ -10,7 +10,7 @@ passport.authenticate('local',{failureRedirect: '/' })(req,res,function() {
 
 exports.logout = function(req, res) {
 	req.logout();
-    res.render('/', {message: "You have been logged out."});
+    res.redirect('/', {message: "You have been logged out."});
 }
 
 exports.signup = function(req, res) {
@@ -25,7 +25,7 @@ exports.saveUser = function(req, res) {
         }
  
         passport.authenticate('local',{failureRedirect: '/' })(req, res, function () {
-          res.render('login', { user: user, message: "Account created succesfully!"});
+          res.redirect('/login', { user: user, message: "Account created succesfully!"});
         });
     });
 }
