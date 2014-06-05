@@ -3,7 +3,7 @@ var passport = require('passport');
 
 exports.login =  function(req,res){
 passport.authenticate('local',{failureRedirect: '/' })(req,res,function() {
-      res.render('upload', { user: 'test'});
+      res.render('upload', { user: req.body.username });
   });
 }
 
