@@ -21,7 +21,7 @@ exports.saveUser = function(req, res) {
 	User.register(new User({ username : req.body.username, name: req.body.name }), req.body.password, function(err, user) {
         if (err) {
         	console.log(err);
-            return res.render('/', { user : user });
+            return res.render('upload', { user : user });
         }
  
         passport.authenticate('local',{failureRedirect: '/' })(req, res, function () {
