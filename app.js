@@ -14,8 +14,9 @@ var LocalStrategy = require('passport-local').Strategy;
 var indexRoute = require('./routes/index');
 var userRoute = require('./routes/user');
 // route includes
-var routes = require('./routes');
 var testD3 = require('./routes/testd3');
+var activiz = require('./routes/activiz');
+
 
 
 /* END Routes variables for files */
@@ -37,7 +38,7 @@ app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
 
-app.use(express.favicon());
+// app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -80,6 +81,7 @@ mongoose.connect(mongoUri);
 app.get('/',ensureAuthenticated,indexRoute.index);
 app.get('/logout',ensureAuthenticated,userRoute.logout);
 app.get('/signup',userRoute.signup);
+app.get('/activiz', activiz.visualize);
 
 // POST requests
 app.post('/login',userRoute.login);
