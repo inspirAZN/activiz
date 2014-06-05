@@ -6,7 +6,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -71,9 +71,9 @@ passport.deserializeUser(User.deserializeUser());
 /* END Passport Config General */
 
 // Mongoose Connect DB
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL;
-mongoose.connect(mongoUri);
+// var mongoUri = process.env.MONGOLAB_URI ||
+//   process.env.MONGOHQ_URL;
+// mongoose.connect(mongoUri);
 
 /* Routes */
 
