@@ -10,7 +10,7 @@ passport.authenticate('local',{failureRedirect: '/' })(req,res,function() {
 
 exports.logout = function(req, res) {
 	req.logout();
-    res.redirect('/');
+    res.render('/', {message: "You have been logged out."});
 }
 
 exports.signup = function(req, res) {

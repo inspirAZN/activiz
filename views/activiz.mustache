@@ -17,12 +17,195 @@
       <!-- <link rel="stylesheet" type="text/css" href="../css/custom.css"> -->
       <script type="text/javascript" src="http://x3dom.org/x3dom/dist/x3dom-full.js"></script>
       <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
 </head>
 
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Activity Viz</a>
+    </div>
 
-
-<div id="divPlot"></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/upload">Upload</a></li>
+        <li class="active"><a href="#">Visualize</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Show if logged in-->
+        <li><a href="#">Welcome {{user}}</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+  <div class="col-lg-12">
+    <div class="col-lg-3 col-lg-offset-1">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                Compare Participants
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <ul>
+                <li>blah</li>
+                <li>blah</li>
+                <li>blah</li>
+                <li>blah</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Annotated Fields
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              Something here
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                Participants
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                <li><a href="#">Participant</a></li>
+                <li><a href="#">Participant</a></li>
+                <li><a href="#">Participant</a></li>
+                <li><a href="#">Participant</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                Color
+              </a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                  <li><a href="#"> Color </a></li>
+                  <li><a href="#"> Color </a></li>
+                  <li><a href="#"> Color </a></li>
+                  <li><a href="#"> Color </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                Filter
+              </a>
+            </h4>
+          </div>
+          <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                  <li><a href="#"> Filter </a></li>
+                  <li><a href="#"> Filter </a></li>
+                  <li><a href="#"> Filter </a></li>
+                  <li><a href="#"> Filter </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                Tags
+              </a>
+            </h4>
+          </div>
+          <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                  <li><a href="#"> Tag </a></li>
+                  <li><a href="#"> Tag </a></li>
+                  <li><a href="#"> Tag </a></li>
+                  <li><a href="#"> Tag </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                Parse Data
+              </a>
+            </h4>
+          </div>
+          <div id="collapse7" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                  <li><a href="#"> Data </a></li>
+                  <li><a href="#"> Data </a></li>
+                  <li><a href="#"> Data </a></li>
+                  <li><a href="#"> Data </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                Line Quality
+              </a>
+            </h4>
+          </div>
+          <div id="collapse8" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul>
+                  <li><a href="#"> Acceleration </a></li>
+                  <li><a href="#"> Velocity </a></li>
+                  <li><a href="#"> Position </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> <!-- Accordion end -->
+    </div>
+    <div class="col-lg-4 col-lg-offset-1">
+      <div id="divPlot"></div>
+    </div>
+  </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -142,52 +325,217 @@
         // set's the tick based on the number of rows
         var increment = Math.floor(numRows*.01);
 
-        /*
-         * Empty arrays /objectsfor different portions of data
-         *
-         * MOTHERJSON STRUCTURE
-         *
-         * motherJSON = {
-         *  bodyPartName: [ 
-         *    {x: , y: , z: }, // center is at [0]
-         *    {x: , y: , z: }, // left is at [1]
-         *    {x: , y: , z: }  // right is at [2]
-         *  ], 
-         *  bodyPartName2: [
-         *    // same as bodyPartName
-         *  ], 
-         *  // and so on
-         *  .
-         *  .
-         *  .
-         * }
-         *
-         *  EX:
-         *  To access the the right z coordinate of a body part
-         *
-         *  var zCoord = motherJSON.bodyPartName[2].z;
-         *
-         */
-        var motherJSON = {
-          "ankle": [],
-          "elbow": [],
-          "foot": [],
-          "hand": [],
-          "head": [],
-          "hip": [],
-          "knee": [],
-          "shoulder": [],
-          "spine": [],
-          "wrist": []
-        };
-        var coordJSON = { "x": 0, "y": 0, "z": 0 };
+        // THIS HOLDS EVERYTHING
+        var averages = [];
+        var motherJSON;
+
+        function resetMother() {
+
+
+          motherJSON = { 
+          "ankle": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "elbow": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          },
+          "foot": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "hand": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          },  
+          "head": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "hip": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "knee": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "shoulder": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "spine": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }, 
+          "wrist": { 
+            "where": { 
+              "center": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              }, 
+              "left": { 
+                "at" : {  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              },
+              "right": { 
+                "at" : {                  
+                  "x": 0, "y": 0, "z": 0 
+                }      
+              } 
+            }
+          }
+        }
+
+
+        }
+
+
         var bodyparts = ["ankle", "elbow", "foot", "hand", "head", 
                          "hip", "knee", "shoulder", "spine", "wrist"];
 
         // returns the key for motherJSON
         function getBodyPart( curKey ) {
           var bodypart = -1;
-          var found = false
+          var found = false;
           var index;
 
           for ( var i = 0; i<bodyparts.length; i++) {
@@ -201,23 +549,27 @@
 
           if( found ) {
             curKey = curKey.substring(index, index+bodypart.length);
-            motherJSON
           } else {
-            console.log(curKey + " not found!");
+            return;
           }
 
           return curKey;
         }
 
-        // returns center(0), left(1), or right (2)
+        // returns center, left, or right as strings
         function getPosition( curKey ) {
+          // special case for head or spine
+          if( curKey.indexOf("head") > -1 || curKey.indexOf("spine") > -1 ){
+            return "center";
+          }
 
+          // regular cases
           if( curKey.indexOf("center") > -1) {
-            return 0;
+            return "center";
           } else if ( curKey.indexOf("left") > -1) {
-            return 1;
+            return "left";
           } else if ( curKey.indexOf("right") > -1){
-            return 2;
+            return "right";
           }
           return;
         }
@@ -235,7 +587,53 @@
 
         }
 
-        
+        // used for adding up the values/ finding average
+        // pass 1 to divisor if adding/ increment if finding average
+        //
+        function addValue( someJSON, divisor ) {
+            // see where to put the info in the object
+            for( var key in someJSON ) {
+              var curKey = key.toLowerCase();
+              
+              selector = getBodyPart( curKey );
+              position = getPosition( curKey );
+              coord = getCoord( curKey );
+
+
+              // special case for time
+              if(curKey == "time") {
+                continue;
+              }
+
+              // console.log(curKey);
+              // for if you pass motherJSON into someJSON
+              // if( !position ) {
+
+              //   var it = motherJSON[selector].where;
+              //   var that;
+              //   // console.log(motherJSON[selector].where);
+              //   var count = 0;
+              //   for( var field in it) {
+              //     that = it[field];
+                  
+              //     console.log(that["at"]);
+
+              //   }
+
+              //   // continue;
+              // }
+
+            motherJSON[selector].where[position].at[coord] += motherJSON[selector].where[position].at[coord]/divisor;
+          }
+        }
+
+        // console.log(averages);
+
+        // recursive function used to find average
+        function recursiveHelper( json ) {
+
+        }
+
 
         // the mapping with respect to x,y,z
         var leftAvgX = 0;
@@ -245,68 +643,39 @@
         var rightAvgY = 0;
         var rightAvgZ = 0;
 
-
         var cur = 0;
+        var selector, position, coord;
+        var tempJSON = {};
 
         // loop and map
         for ( var i = 0; i < numRows; i++ ){
+          // reset everything
+          resetMother();
+
           // average the data up until the increment
           for ( var j = 0; j < increment; j++ ) {
             cur = (i*increment) + j;
-
             if( cur >= numRows ){
               break;
             }
-
-            var selector, position, coord;
-
-            // see where to put the info in the object
-            for( var key in response[cur] ) {
-              var curKey = key.toLowerCase();
-              
-              selector = getBodyPart( curKey );
-              position = getPosition( curKey );
-              coord = getCoord( curKey );
-
-              // console.log(curKey + " at " + position + " with coord " + coord);
-              
-
-
-
-            }
-            // // loop through the keys in one JSON
-            // for( var key in response[cur] ) {
-
-            // }
-
-            // leftAvgX += response[cur].leftX;
-            // leftAvgY += response[cur].leftY;
-            // leftAvgZ += response[cur].leftZ
-            // rightAvgX += response[cur].rightX;
-            // rightAvgY += response[cur].rightY;
-
+            // add up all the data
+            addValue(response[cur], 1);
           }
+          // now we find averages
+          // addValue(motherJSON, increment);
 
-          // average the values
-          leftMapping.x = leftAvgX/increment;
-          leftMapping.y = leftAvgY/increment;
-          rightMapping.x = rightAvgX/increment;
-          rightMapping.y = rightAvgY/increment;
+          tempJSON = motherJSON;
 
+          // that json now holds averages, push it to the array of averages
+          averages.push(tempJSON);
 
-          // add it to the array
-          // leftData.push(leftMapping);
-          // rightData.push(rightMapping);
+          // when loop restarts, motherJSON will be reset
 
-          // reset everything
-          leftMapping = {};
-          rightMapping = {};
-          leftAvgX = 0;
-          leftAvgY = 0;
-          rightAvgX = 0;
-          rightAvgY = 0;
 
         }
+
+          console.log(averages);
+
 
       // sort the array by time
       // leftData.sort(function(a,b) {
