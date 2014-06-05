@@ -21,11 +21,11 @@ exports.saveUser = function(req, res) {
 	User.register(new User({ username : req.body.username, name: req.body.name }), req.body.password, function(err, user) {
         if (err) {
         	console.log(err);
-            return res.render('upload', { user : user });
+            return res.render('login', { user : user });
         }
  
         passport.authenticate('local',{failureRedirect: '/' })(req, res, function () {
-          res.redirect('/');
+          res.render('login', { user: user, message: "Account created succesfully!"});
         });
     });
 }
