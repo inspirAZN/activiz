@@ -258,7 +258,7 @@ function scatterPlot3d( parent )
     }
   }
 
-  // initializeDataGrid();
+  initializeDataGrid();
   initializePlot();
   plotData(defaultDuration);
 
