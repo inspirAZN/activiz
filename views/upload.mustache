@@ -69,6 +69,21 @@
 <script src="../js/d3.js"></script>
 <script src="../js/rickshaw.js"></script>
 <script src="../js/3Dplot.js"></script>
+<script>
+        
+   $(document).ready(function(){
+      $("#exampleInputFile").change(function(e) {
+      var ext = $("input#exampleInputFile").val().split(".").pop().toLowerCase();
+
+      if($.inArray(ext, ["csv"]) == -1) {
+          alert('Upload CSV');
+          return false;
+      };
+
+  })
+}
+)
+</script>
 
 </body>
 </html>
